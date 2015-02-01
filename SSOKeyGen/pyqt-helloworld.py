@@ -1,29 +1,22 @@
-#!/usr/bin/python3
-# -*- coding: utf-8 -*-
-
-"""
-ZetCode PyQt5 tutorial
-
-In this example, we create a simple
-window in PyQt5.
-
-author: Jan Bodnar
-website: zetcode.com
-last edited: January 2015
-"""
-
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget
+
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+
+from SSOKeyGen.ssokeygen import Ui_MainWindow
 
 
-if __name__ == '__main__':
+class MyApp(QMainWindow, Ui_MainWindow):
+    parse_triggered = pyqtSignal()
+
+    def __init__(self, parent=None, name=None):
+        super(MyApp, self).__init__(parent)
+        self.setupUi(self)
+
+if __name__ == "__main__":
 
     app = QApplication(sys.argv)
-
-    w = QWidget()
-    w.resize(250, 150)
-    w.move(300, 300)
-    w.setWindowTitle('Simple')
-    w.show()
-
+    window = MyApp()
+    window.show()
     sys.exit(app.exec_())
