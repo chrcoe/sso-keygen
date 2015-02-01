@@ -5,6 +5,11 @@ __pycache__/
 # C extensions
 *.so
 
+# Eclipse files
+*.settings/
+*.pydevproject
+*.project
+
 # Distribution / packaging
 .Python
 env/
