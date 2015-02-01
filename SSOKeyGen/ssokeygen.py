@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ssokeygen.ui'
 #
-# Created: Sun Feb  1 09:35:55 2015
+# Created: Sun Feb  1 12:54:41 2015
 #      by: PyQt5 UI code generator 5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -15,18 +15,25 @@ class Ui_MainWindow(object):
         MainWindow.resize(805, 656)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit.setGeometry(QtCore.QRect(140, 190, 311, 41))
-        self.plainTextEdit.setObjectName("plainTextEdit")
-        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(230, 290, 113, 22))
-        self.lineEdit.setObjectName("lineEdit")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(30, 190, 111, 16))
-        self.label.setObjectName("label")
+        self.splitter = QtWidgets.QSplitter(self.centralwidget)
+        self.splitter.setGeometry(QtCore.QRect(550, 550, 230, 31))
+        self.splitter.setOrientation(QtCore.Qt.Horizontal)
+        self.splitter.setObjectName("splitter")
+        self.buttonUpdate = QtWidgets.QPushButton(self.splitter)
+        self.buttonUpdate.setObjectName("buttonUpdate")
+        self.buttonClear = QtWidgets.QPushButton(self.splitter)
+        self.buttonClear.setObjectName("buttonClear")
+        self.splitter_2 = QtWidgets.QSplitter(self.centralwidget)
+        self.splitter_2.setGeometry(QtCore.QRect(280, 120, 256, 213))
+        self.splitter_2.setOrientation(QtCore.Qt.Vertical)
+        self.splitter_2.setObjectName("splitter_2")
+        self.textBox = QtWidgets.QPlainTextEdit(self.splitter_2)
+        self.textBox.setObjectName("textBox")
+        self.testLabel = QtWidgets.QLabel(self.splitter_2)
+        self.testLabel.setObjectName("testLabel")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 805, 19))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 805, 29))
         self.menubar.setObjectName("menubar")
         self.menuTest = QtWidgets.QMenu(self.menubar)
         self.menuTest.setObjectName("menuTest")
@@ -34,20 +41,24 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        self.actionHello_World_TEST = QtWidgets.QAction(MainWindow)
-        self.actionHello_World_TEST.setObjectName("actionHello_World_TEST")
-        self.menuTest.addAction(self.actionHello_World_TEST)
+        self.actionClose = QtWidgets.QAction(MainWindow)
+        self.actionClose.setObjectName("actionClose")
+        self.menuTest.addAction(self.actionClose)
         self.menubar.addAction(self.menuTest.menuAction())
 
         self.retranslateUi(MainWindow)
+        self.actionClose.triggered.connect(MainWindow.close)
+        self.buttonUpdate.clicked.connect(MainWindow.update)
+        self.buttonClear.clicked.connect(self.testLabel.clear)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Hello World"))
-        self.plainTextEdit.setPlainText(_translate("MainWindow", "Hello World test!"))
-        self.lineEdit.setText(_translate("MainWindow", "Test Hello world"))
-        self.label.setText(_translate("MainWindow", "Hello world label"))
-        self.menuTest.setTitle(_translate("MainWindow", "Test"))
-        self.actionHello_World_TEST.setText(_translate("MainWindow", "Hello World TEST"))
+        self.buttonUpdate.setText(_translate("MainWindow", "Update"))
+        self.buttonClear.setText(_translate("MainWindow", "Clear"))
+        self.testLabel.setText(_translate("MainWindow", "TextLabel"))
+        self.menuTest.setTitle(_translate("MainWindow", "File"))
+        self.actionClose.setText(_translate("MainWindow", "Exit"))
+        self.actionClose.setShortcut(_translate("MainWindow", "Ctrl+Q"))
 

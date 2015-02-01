@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ssokeygendialog.ui'
 #
-# Created: Sun Feb  1 09:37:46 2015
+# Created: Sun Feb  1 12:33:36 2015
 #      by: PyQt5 UI code generator 5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -18,6 +18,9 @@ class Ui_Dialog(object):
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
         self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
         self.buttonBox.setObjectName("buttonBox")
+        self.testLabel = QtWidgets.QLabel(Dialog)
+        self.testLabel.setGeometry(QtCore.QRect(50, 40, 181, 31))
+        self.testLabel.setObjectName("testLabel")
 
         self.retranslateUi(Dialog)
         self.buttonBox.accepted.connect(Dialog.accept)
@@ -27,4 +30,5 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog Test"))
+        self.testLabel.setText(_translate("Dialog", "TextLabel"))
 

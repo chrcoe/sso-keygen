@@ -14,44 +14,47 @@
    <string>Hello World</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPlainTextEdit" name="plainTextEdit">
+   <widget class="QSplitter" name="splitter">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>190</y>
-      <width>311</width>
-      <height>41</height>
+      <x>550</x>
+      <y>550</y>
+      <width>230</width>
+      <height>31</height>
      </rect>
     </property>
-    <property name="plainText">
-     <string>Hello World test!</string>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
+    <widget class="QPushButton" name="buttonUpdate">
+     <property name="text">
+      <string>Update</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonClear">
+     <property name="text">
+      <string>Clear</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QSplitter" name="splitter_2">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>290</y>
-      <width>113</width>
-      <height>22</height>
+      <x>280</x>
+      <y>120</y>
+      <width>256</width>
+      <height>213</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Test Hello world</string>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
     </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>190</y>
-      <width>111</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Hello world label</string>
-    </property>
+    <widget class="QPlainTextEdit" name="textBox"/>
+    <widget class="QLabel" name="testLabel">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -60,24 +63,76 @@
      <x>0</x>
      <y>0</y>
      <width>805</width>
-     <height>19</height>
+     <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuTest">
     <property name="title">
-     <string>Test</string>
+     <string>File</string>
     </property>
-    <addaction name="actionHello_World_TEST"/>
+    <addaction name="actionClose"/>
    </widget>
    <addaction name="menuTest"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionHello_World_TEST">
+  <action name="actionClose">
    <property name="text">
-    <string>Hello World TEST</string>
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
    </property>
   </action>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionClose</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>402</x>
+     <y>327</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonUpdate</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>605</x>
+     <y>594</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>402</x>
+     <y>327</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClear</sender>
+   <signal>clicked()</signal>
+   <receiver>testLabel</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>723</x>
+     <y>594</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>407</x>
+     <y>326</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
