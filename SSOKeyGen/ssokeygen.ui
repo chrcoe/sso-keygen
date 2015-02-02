@@ -6,55 +6,52 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>805</width>
-    <height>656</height>
+    <width>438</width>
+    <height>340</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Hello World</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QSplitter" name="splitter">
+   <widget class="QDialogButtonBox" name="buttonBox">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>550</y>
-      <width>230</width>
+      <x>80</x>
+      <y>150</y>
+      <width>269</width>
       <height>31</height>
      </rect>
     </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
+    <property name="standardButtons">
+     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok|QDialogButtonBox::Reset</set>
     </property>
-    <widget class="QPushButton" name="buttonUpdate">
-     <property name="text">
-      <string>Update</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="buttonClear">
-     <property name="text">
-      <string>Clear</string>
-     </property>
-    </widget>
+    <property name="centerButtons">
+     <bool>false</bool>
+    </property>
    </widget>
-   <widget class="QSplitter" name="splitter_2">
+   <widget class="QPlainTextEdit" name="textBox">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>120</y>
+      <x>90</x>
+      <y>43</y>
       <width>256</width>
-      <height>213</height>
+      <height>41</height>
      </rect>
     </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
+   </widget>
+   <widget class="QLabel" name="testLabel">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>90</y>
+      <width>251</width>
+      <height>21</height>
+     </rect>
     </property>
-    <widget class="QPlainTextEdit" name="textBox"/>
-    <widget class="QLabel" name="testLabel">
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-    </widget>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -62,7 +59,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>805</width>
+     <width>438</width>
      <height>29</height>
     </rect>
    </property>
@@ -99,38 +96,6 @@
     <hint type="destinationlabel">
      <x>402</x>
      <y>327</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonUpdate</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>update()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>605</x>
-     <y>594</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>402</x>
-     <y>327</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonClear</sender>
-   <signal>clicked()</signal>
-   <receiver>testLabel</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>723</x>
-     <y>594</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>407</x>
-     <y>326</y>
     </hint>
    </hints>
   </connection>
